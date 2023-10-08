@@ -16,29 +16,27 @@ router.get("/seed", (req, res) => {
       category: "entry2",
       question: "question2",
     },
-  ])
-    .then(() => {
-      res.redirect("/questions");
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  ]).catch((err) => {
+    console.log(err);
+  });
 });
 
 //questions index
 router.get("/", async (req, res) => {
   try {
     const questions = await Question.find();
-    res.render("Index", { questions: questions });
+    res.json(questions);
   } catch (error) {
     console.error(error);
   }
 });
 
+/*
 //questions new
 router.get("/new", (req, res) => {
   res.render("New");
 });
+*/
 
 //questions delete
 try {
@@ -70,7 +68,15 @@ router.put("/:id", (req, res) => {
 //questions create
 router.post("/", async (req, res) => {
   try {
-    //data correction goes here
+    //data correction
+    if (req.body.isErrorMessage === "on") {
+      //if radio button is checked by user
+      req.body.isErrorMessage = true; //do some data correction
+    } else {
+      //if radio button is not checked by user
+      req.body.isErrorMessage = false; //do some data correction
+    }
+
     //store new question in cloud db
     await Question.create(req.body);
 

@@ -2,7 +2,6 @@
 const express = require("express");
 const app = express();
 
-const jsxEngine = require("jsx-view-engine"); //require view engine
 const mongoose = require("mongoose"); //require mongoose db; allows for object document mapping
 const methodOverride = require("method-override"); //method-override package: for spoofing HTTP methods
 require("dotenv").config(); //require .env file; allows for process.env.some_const_inside_env_goes_here syntax to be used
@@ -11,8 +10,6 @@ require("dotenv").config(); //require .env file; allows for process.env.some_con
 const questionsController = require("./controllers/questionsController");
 
 //add views templating engine
-app.set("view engine", "jsx");
-app.engine("jsx", jsxEngine());
 
 //middleware
 //body parser middleware included in express; allows for req.body syntax to be used
@@ -44,6 +41,6 @@ app.get("/", (req, res) => {
 app.use("/questions", questionsController); // tells server.js to import the routes from file that questionsController gets set to
 
 //listen on port 3000
-app.listen(3000, () => {
+app.listen(3001, () => {
   console.log("listening");
 });
