@@ -18,11 +18,11 @@ router.get("/seed", (req, res) => {
       question: "question2",
       hasErrorMessage: true,
     },
-  ]).catch((err) => {
-    console.log(err);
+  ]).catch((error) => {
+    console.log(error);
   });
 
-  //send message to frontend
+  //send message to user; user in this context refers to user of the backend, example developers, not the normal user of the app from the frontend
   res.send("data seeded in db");
 });
 
@@ -49,8 +49,8 @@ try {
     await Question.findByIdAndRemove(req.params.id);
     res.redirect("/questions"); //redirect back to questions index
   });
-} catch {
-  console.log("something went wrong...");
+} catch (error) {
+  console.log(error);
 }
 
 //questions update
