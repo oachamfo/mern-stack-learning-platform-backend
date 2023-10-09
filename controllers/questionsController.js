@@ -104,7 +104,7 @@ router.get("/:id", async (req, res) => {
   try {
     const question = await Question.findById(req.params.id);
 
-    res.render("Show", { question: question });
+    res.json(question);
   } catch (error) {
     console.log(error);
   }
