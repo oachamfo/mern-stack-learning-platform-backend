@@ -90,11 +90,10 @@ router.post("/", async (req, res) => {
 router.get("/:id/edit", async (req, res) => {
   await Question.findById(req.params.id)
     .then((foundQuestion) => {
-      res.render("Edit", {
-        question: foundQuestion, //pass in the foundQuestion so we can use it to populate the form
-      });
+      res.json(foundQuestion);
     })
     .catch((err) => {
+      console.log(err);
       res.send({ msg: err.message });
     });
 });
