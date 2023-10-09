@@ -8,17 +8,22 @@ router.get("/seed", (req, res) => {
   Question.create([
     {
       title: "title1",
-      category: "entry1",
+      errorMessage: "errorMessage1",
       question: "question1",
+      hasErrorMessage: false,
     },
     {
       title: "title2",
-      category: "entry2",
+      errorMessage: "errorMessage2",
       question: "question2",
+      hasErrorMessage: true,
     },
   ]).catch((err) => {
     console.log(err);
   });
+
+  //send message to frontend
+  res.send("data seeded in db");
 });
 
 //questions index
