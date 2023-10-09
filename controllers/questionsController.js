@@ -55,10 +55,10 @@ try {
 
 //questions update
 router.put("/:id", (req, res) => {
-  if (req.body.shipIsBroken === "on") {
-    req.body.shipIsBroken = true;
+  if (req.body.hasErrorMessage === "on") {
+    req.body.hasErrorMessage = true;
   } else {
-    req.body.shipIsBroken = false;
+    req.body.hasErrorMessage = false;
   }
   Question.findByIdAndUpdate(req.params.id, req.body)
     .then((updatedQuestion) => {
