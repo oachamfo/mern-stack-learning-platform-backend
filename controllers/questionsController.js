@@ -69,12 +69,12 @@ router.put("/:id", (req, res) => {
 router.post("/", async (req, res) => {
   try {
     //data correction
-    if (req.body.isErrorMessage === "on") {
+    if (req.body.hasErrorMessage === "on") {
       //if radio button is checked by user
-      req.body.isErrorMessage = true; //do some data correction
+      req.body.hasErrorMessage = true; //do some data correction
     } else {
       //if radio button is not checked by user
-      req.body.isErrorMessage = false; //do some data correction
+      req.body.hasErrorMessage = false; //do some data correction
     }
 
     //store new question in cloud db

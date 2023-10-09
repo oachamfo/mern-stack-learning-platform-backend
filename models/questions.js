@@ -5,9 +5,9 @@ const mongoose = require("mongoose");
 const questionSchema = new mongoose.Schema(
   {
     title: { type: String, required: true },
-    category: { type: String, required: true },
-    question: { type: String, required: true },
-    isErrorMessage: { type: Boolean, requried: true, default: false },
+    errorMessage: { type: String, required: false },
+    question: { type: String, required: false },
+    hasErrorMessage: { type: Boolean, requried: true, default: false },
   },
   { timestamps: true }
 );
