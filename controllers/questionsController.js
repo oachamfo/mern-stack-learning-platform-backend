@@ -107,7 +107,6 @@ router.get("/:id/edit", async (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     const question = await Question.findById(req.params.id);
-
     res.json(question);
   } catch (error) {
     console.log(error);
