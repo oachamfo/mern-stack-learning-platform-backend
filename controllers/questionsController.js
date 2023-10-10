@@ -2,6 +2,7 @@
 const express = require("express");
 const router = express.Router();
 const Question = require("../models/questions.js");
+const Answer = require("../models/answers.js");
 
 //seed route
 router.get("/seed", (req, res) => {
@@ -46,7 +47,9 @@ router.get("/new", (req, res) => {
 //questions delete
 try {
   router.delete("/:id", async (req, res) => {
-    await Question.findByIdAndRemove(req.params.id);
+    //delete Question and referenced Answers
+    const deleted = await Question.findByIdAndRemove(req.params.id); //delete Question
+    await Answer.deleteMany({ _id: { $in: deleted.answers } }); //delete referenced Answers
     res.redirect("/questions"); //redirect back to questions index
   });
 } catch (error) {
