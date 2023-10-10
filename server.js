@@ -8,6 +8,7 @@ require("dotenv").config(); //require .env file; allows for process.env.some_con
 
 //require controllers
 const questionsController = require("./controllers/questionsController");
+const answersController = require("./controllers/answersController");
 
 //add views templating engine
 
@@ -39,6 +40,7 @@ app.get("/", (req, res) => {
 
 //resource routes
 app.use("/questions", questionsController); // tells server.js to import the routes from file that questionsController gets set to
+app.use("/answers", answersController);
 
 //listen on port 3000
 app.listen(3001, () => {

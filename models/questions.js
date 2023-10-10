@@ -8,6 +8,12 @@ const questionSchema = new mongoose.Schema(
     errorMessage: { type: String, required: false },
     question: { type: String, required: false },
     hasErrorMessage: { type: Boolean, requried: true, default: false },
+    answers: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Answer",
+      },
+    ],
   },
   { timestamps: true }
 );
