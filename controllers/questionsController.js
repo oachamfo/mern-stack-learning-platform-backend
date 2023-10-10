@@ -37,13 +37,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-/*
-//questions new
-router.get("/new", (req, res) => {
-  res.render("New");
-});
-*/
-
 //questions delete
 try {
   router.delete("/:id", async (req, res) => {

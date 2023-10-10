@@ -1,6 +1,7 @@
 //initialize app
 const express = require("express");
 const app = express();
+const port = 3001;
 
 const mongoose = require("mongoose"); //require mongoose db; allows for object document mapping
 const methodOverride = require("method-override"); //method-override package: for spoofing HTTP methods
@@ -10,7 +11,7 @@ require("dotenv").config(); //require .env file; allows for process.env.some_con
 const questionsController = require("./controllers/questionsController");
 const answersController = require("./controllers/answersController");
 
-//add views templating engine
+//add views templating engine here if views are used
 
 //middleware
 //body parser middleware included in express; allows for req.body syntax to be used
@@ -29,9 +30,6 @@ mongoose.connection.once("open", () => {
   console.log("connected to mongo");
 });
 
-//models
-const Question = require("./models/questions.js");
-
 //routes
 //homepage route
 app.get("/", (req, res) => {
@@ -42,7 +40,7 @@ app.get("/", (req, res) => {
 app.use("/questions", questionsController); // tells server.js to import the routes from file that questionsController gets set to
 app.use("/answers", answersController);
 
-//listen on port 3000
-app.listen(3001, () => {
-  console.log("listening");
+//listen on port; default is 3001
+app.listen(port, () => {
+  console.log("listening on port: " + port);
 });
