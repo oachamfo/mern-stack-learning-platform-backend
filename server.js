@@ -2,7 +2,7 @@
 const express = require("express");
 const app = express();
 const port = 3001;
-
+const cors = require("cors");
 const mongoose = require("mongoose"); //require mongoose db; allows for object document mapping
 const methodOverride = require("method-override"); //method-override package: for spoofing HTTP methods
 require("dotenv").config(); //require .env file; allows for process.env.some_const_inside_env_goes_here syntax to be used
@@ -20,6 +20,9 @@ app.use(express.urlencoded({ extended: true }));
 //use methodOverride package for adding a query parameter to the delete form named _method
 //allows for delte method to be spoofed
 app.use(methodOverride("_method"));
+
+//enable CORS
+app.use(cors());
 
 //db connection
 mongoose.connect(process.env.MONGO_URI, {
