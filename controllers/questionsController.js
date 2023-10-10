@@ -106,7 +106,8 @@ router.get("/:id/edit", async (req, res) => {
 //questions show
 router.get("/:id", async (req, res) => {
   try {
-    const question = await Question.findById(req.params.id);
+    //populate answers arrays in Question object with objects from answers collection
+    const question = await Question.findById(req.params.id).populate("answers");
     res.json(question);
   } catch (error) {
     console.log(error);

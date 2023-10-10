@@ -32,7 +32,7 @@ router.post("/:question_id/", async (req, res) => {
   } catch (error) {
     console.log(error);
   }
-}); //closing for router.post() method
+}); //closing parenthesis for router.post() method
 
 //export router object
 module.exports = router;
