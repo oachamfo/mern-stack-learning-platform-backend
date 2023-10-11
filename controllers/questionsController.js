@@ -60,7 +60,7 @@ router.put("/:id", (req, res) => {
     .then((updatedQuestion) => {
       console.log(updatedQuestion);
       res.redirect(
-        `https://mern-stack-questionandanswer-frontend.onrender.com/questions/${req.params.id}`
+        `https://mern-stack-questionandanswer-frontend.onrender.com/#/questions/${req.params.id}`
       ); //redirect to the Show page
     })
     .catch((err) => {
