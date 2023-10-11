@@ -13,13 +13,21 @@ In the backend some of the primary installs included mongodb, mongoose, express,
 
 ## Links to the project's deployed app:
 
-### Backend Github repo:
+### Frontend Render Deployment:
 
-https://github.com/oachamfo/mern-stack-learning-platform-backend
+https://mern-stack-questionandanswer-frontend.onrender.com/
+
+### Backend Render Deployment:
+
+https://mern-stack-questionandanswer-backend.onrender.com
 
 ### Frontend Github repo:
 
 https://github.com/oachamfo/mern-stack-learning-platform-frontend
+
+### Backend Github repo:
+
+https://github.com/oachamfo/mern-stack-learning-platform-backend
 
 # Unsolved Problems:
 
