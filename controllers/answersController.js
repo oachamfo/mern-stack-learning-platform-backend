@@ -17,7 +17,9 @@ router.post("/:question_id/", async (req, res) => {
 
         //res.redirect() may be used before the return statement;
         //res.redirect() does not have to be the last statement the callback to the post() method executes
-        res.redirect(`/questions/${req.params.question_id}`); //with res.redirect() the backend redirects the frontend to the Show page
+        res.redirect(
+          `https://mern-stack-questionandanswer-frontend.onrender.com/#/questions/${req.params.question_id}`
+        ); //with res.redirect() the backend redirects the frontend to the Show page
 
         //this return statement is needed for the answers array in the Question object to be updated with the docAnswer._id
         return Question.findByIdAndUpdate(
