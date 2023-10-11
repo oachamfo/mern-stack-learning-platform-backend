@@ -43,7 +43,7 @@ try {
     //delete Question and referenced Answers
     const deleted = await Question.findByIdAndRemove(req.params.id); //delete Question
     await Answer.deleteMany({ _id: { $in: deleted.answers } }); //delete referenced Answers
-    res.redirect("/questions"); //redirect back to questions index
+    res.redirect("https://mern-stack-questionandanswer-frontend.onrender.com/"); //refactoring code to work with Render
   });
 } catch (error) {
   console.log(error);
@@ -81,7 +81,7 @@ router.post("/", async (req, res) => {
     //store new question in cloud db
     await Question.create(req.body);
 
-    res.redirect("https://mern-stack-questionandanswer-frontend.onrender.com/");
+    res.redirect("https://mern-stack-questionandanswer-frontend.onrender.com/"); //refactoring code to work with Render
   } catch (error) {
     console.log(error);
   }
