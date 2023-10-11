@@ -81,9 +81,7 @@ router.post("/", async (req, res) => {
     //store new question in cloud db
     await Question.create(req.body);
 
-    res.redirect(
-      "https://mern-stack-questionandanswer-frontend.onrender.com/questions"
-    );
+    res.redirect("https://mern-stack-questionandanswer-frontend.onrender.com/");
   } catch (error) {
     console.log(error);
   }
