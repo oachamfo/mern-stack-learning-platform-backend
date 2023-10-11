@@ -59,7 +59,9 @@ router.put("/:id", (req, res) => {
   Question.findByIdAndUpdate(req.params.id, req.body)
     .then((updatedQuestion) => {
       console.log(updatedQuestion);
-      res.redirect(`/questions/${req.params.id}`); //redirect to the Show page
+      res.redirect(
+        `https://mern-stack-questionandanswer-frontend.onrender.com/questions/${req.params.id}`
+      ); //redirect to the Show page
     })
     .catch((err) => {
       console.log(err.message);
