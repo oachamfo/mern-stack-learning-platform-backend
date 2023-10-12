@@ -31,7 +31,9 @@ https://github.com/oachamfo/mern-stack-learning-platform-backend
 
 # Unsolved Problems:
 
-The frontend deploys to Render and Github Pages, but behaves in a quirky way than it does on the localhost.
+The frontend deploys to Render and Github Pages, but behaves in a quirky way with the links than it does on the localhost. Although the problems after deployment were resolved, further investigation is needed to have a deeper understanding into why those problems happened in the production environment but not in the development environment on the localhost. The problems in production were resolved by trial and error: forming a hypothesis and testing the hypothesis until a solution was reached. Doing online research did not always return sensical or relevant results.
+
+More research is also needed into how contemporary machine learning, namely approaches based on statistical models and AI can be used to return a single source of truth for the user's question.
 
 # Future Enhancements:
 
@@ -39,12 +41,16 @@ Some future features and enhancements planned for the project is to include a se
 
 # User Stories:
 
+I can view an index of questions (Index Questions).
+I can create a question (Create Question).
+I can read a question (Read Question).
+I can edit a question (Update Question).
+I can delete a question (Delete Note).
+I can answer a question (Create Answer).
+I can read an answer (Read Answer).
+
+## User Stories Summary:
+
 As a user, I want other users to answer my questions and be able to answer theirs,
 while taking back questions I asked by deleting them, and make changes
 to a question if I get an afterthought by editing.
-
-I can create a question.
-I can read a question.
-I can edit a question.
-I can delete a question.
-I can answer a question.
